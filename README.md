@@ -1,4 +1,4 @@
-# coursework_4
+# ICP开发入门课程第四课课程作业
 
 Welcome to your new coursework_4 project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
 
