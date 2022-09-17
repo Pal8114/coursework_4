@@ -1,27 +1,10 @@
 {
   "version": 1,
-  "dfx": "0.11.1",
+  "dfx": "0.11.2",
   "canisters": {
     "coursework_4_backend": {
       "type": "motoko",
       "main": "src/coursework_4_backend/main.mo"
-    },
-    "microblog2": {
-      "type": "motoko",
-      "main": "src/coursework_4_backend/main.mo"
-    },
-    "microblog3": {
-      "type": "motoko",
-      "main": "src/coursework_4_backend/main.mo"
-    },
-    "coursework_4_frontend": {
-      "type": "assets",
-      "source": [
-        "src/coursework_4_frontend/assets"
-      ],
-      "dependencies": [
-        "coursework_4_backend"
-      ]
     }
   },
   "defaults": {

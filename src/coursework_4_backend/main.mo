@@ -11,6 +11,8 @@ import Time "mo:base/Time";
 
 actor {
   stable var get_principal = "bsm6x-7l3bz-cy7vb-lm7f5-ei5vi-2edut-h4m5o-bicgu-54cea-kozeu-jqe";
+  stable var get_canister = "gmoyf-dyaaa-aaaam-aarra-cai"; // candid - ui post验证临时使用
+  
   stable var followed : List.List<Principal> = List.nil(); 
   stable var messages : List.List<Microblog.Message> = List.nil(); 
   
@@ -26,7 +28,14 @@ actor {
 
   public shared (msg) func post(text: Text) : async () {
     let caller = Principal.toText(msg.caller);
-    assert(Text.equal(caller, get_principal));
+
+    // candid - ui post验证临时使用
+    if (Text.size(caller) == Text.size(get_principal)) {
+      assert(Text.equal(caller, get_principal)); 
+    } else if (Text.size(caller) == Text.size(get_canister)) {
+      assert(Text.equal(caller, get_canister)); // candid - ui post验证临时使用
+    };
+
     messages := List.push(
       {
         content = text; 
