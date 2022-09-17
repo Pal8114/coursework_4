@@ -26,9 +26,7 @@ actor {
 
   public shared (msg) func post(text: Text) : async () {
     let caller = Principal.toText(msg.caller);
-    Debug.print(caller);
-    
-    assert(Text.equal(Principal.toText(msg.caller), get_principal));
+    assert(Text.equal(caller, get_principal));
     messages := List.push(
       {
         content = text; 
