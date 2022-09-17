@@ -8,6 +8,7 @@ import Option "mo:base/Option";
 import Principal "mo:base/Principal";
 import Text "mo:base/Text";
 import Time "mo:base/Time";
+import Blob "mo:base/Blob";
 
 actor {
   stable var get_principal = "bsm6x-7l3bz-cy7vb-lm7f5-ei5vi-2edut-h4m5o-bicgu-54cea-kozeu-jqe";
@@ -18,7 +19,7 @@ actor {
   
   public shared func follow(id: Principal) : async () {
     if (null == List.find(followed, func(e : Principal) : Bool { e == id })) {
-      followed := List.push(id, followed);
+        followed := List.push(id, followed);
     }
   };
 
