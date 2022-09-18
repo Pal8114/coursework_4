@@ -5,6 +5,14 @@
     "coursework_4_backend": {
       "type": "motoko",
       "main": "src/coursework_4_backend/main.mo"
+    },
+    "microblog2": {
+      "type": "motoko",
+      "main": "src/coursework_4_backend/main.mo"
+    },
+    "microblog3": {
+      "type": "motoko",
+      "main": "src/coursework_4_backend/main.mo"
     }
   },
   "defaults": {

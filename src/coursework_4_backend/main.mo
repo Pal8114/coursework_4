@@ -17,10 +17,17 @@ actor {
   stable var followed : List.List<Principal> = List.nil(); 
   stable var messages : List.List<Microblog.Message> = List.nil(); 
   
+  // https://forum.dfinity.org/t/is-there-any-address-0-equivalent-at-dfinity-motoko/5445/3
+  let null_address : Principal = Principal.fromText("aaaaa-aa");
+
   public shared func follow(id: Principal) : async () {
-    if (null == List.find(followed, func(e : Principal) : Bool { e == id })) {
-        followed := List.push(id, followed);
+    if (id != null_address and null == List.find(followed, func(e : Principal) : Bool { e == id })) {
+      followed := List.push(id, followed);
     }
+    
+    // if (null == List.find(followed, func(e : Principal) : Bool { e == id })) {
+    //     followed := List.push(id, followed);
+    // }
   };
 
   public shared query func follows() : async [Principal] {
